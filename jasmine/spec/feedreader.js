@@ -123,10 +123,10 @@ $(function() {
 
 
          describe('New Feed Selection', function(){
-
+            var oldContent;
             beforeEach(function(done){
                 loadFeed(0,function(){
-                var oldContent= $('feed').html();
+                oldContent= $('feed').html();
                 loadFeed(1,done);
             });
                 var NewFeed = $('feed').html();
