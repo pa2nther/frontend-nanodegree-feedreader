@@ -120,16 +120,23 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         var n=0;
+         var NewFeed = null;
+         var oldContent = null;
 
 
          describe('New Feed Selection', function(){
-            var oldContent;
+            
             beforeEach(function(done){
-                loadFeed(0,function(){
-                oldContent= $('feed').html();
-                loadFeed(1,done);
+                loadFeed(n,function(){
+                oldContent= $('.header-title').html();
+                console.log(oldContent);
+                loadFeed(n+1,done);
+                NewFeed = $('header-title').html();
+                console.log(NewFeed+'log of the new Feed')
+                done();
             });
-                var NewFeed = $('feed').html();
+                 
                 
             });
 
