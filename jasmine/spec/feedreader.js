@@ -132,7 +132,7 @@ $(function() {
                 oldContent= $('.header-title').html();
                 console.log(oldContent);
                 loadFeed(n+1,done);
-                NewFeed = $('header-title').html();
+                NewFeed = $('.header-title').html();
                 console.log(NewFeed+'log of the new Feed')
                 done();
             });
