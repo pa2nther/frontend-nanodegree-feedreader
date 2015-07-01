@@ -128,14 +128,15 @@ $(function() {
          describe('New Feed Selection', function(){
             
             beforeEach(function(done){
-                loadFeed(n,function(){
+                loadFeed(0);
                 oldContent= $('.header-title').html();
                 console.log(oldContent);
+                done();
                 loadFeed(n+1,done);
                 NewFeed = $('.header-title').html();
                 console.log(NewFeed+'log of the new Feed')
                 done();
-            });
+           // });
                  
                 
             });
