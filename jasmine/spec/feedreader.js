@@ -34,11 +34,11 @@ $(function() {
            
             it('has url', function(){
                 var i=0;
-               for( i; i<allFeeds.length;i++){
-                 console.log(allFeeds[i].url);  
-                 expect(allFeeds[i].url).toBeDefined();
-                 expect(allFeeds[i].url).not.toBeNull();
-                 expect(allFeeds[i].url).not.toBe(' ');
+                for( i; i<allFeeds.length;i++){
+                    console.log(allFeeds[i].url);  
+                    expect(allFeeds[i].url).toBeDefined();
+                    expect(allFeeds[i].url).not.toBeNull();
+                    expect(allFeeds[i].url).not.toBe(' ');
                 }
             });
 
@@ -50,10 +50,10 @@ $(function() {
            
              it('has name', function(){
                 var j=0;
-               for(j;j<allFeeds.length;j++){
-                expect(allFeeds[j].name).toBeDefined();
-                expect(allFeeds[j].name).not.toBeNull();
-                expect(allFeeds[j].name).not.toBe(' ');
+                for(j;j<allFeeds.length;j++){
+                    expect(allFeeds[j].name).toBeDefined();
+                    expect(allFeeds[j].name).not.toBeNull();
+                    expect(allFeeds[j].name).not.toBe(' ');
                }
              });
 
@@ -79,7 +79,7 @@ $(function() {
          it('is hidden', function(){
             menuIcon = $('menu-hidden');
 
-           expect(menuIcon).toBeTruthy();
+            expect(menuIcon).toBeTruthy();
          });
 
          it('changes when clicked', function(){
@@ -101,13 +101,13 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         describe('Initial Entries', function(){
+    describe('Initial Entries', function(){
 
-            beforeEach(function(done){
-                   loadFeed(0);
-                   NewFeed = $('feed').html();
-                   console.log(NewFeed);
-                   done();
+            beforeEach(function(){
+                loadFeed(0);
+                NewFeed = $('feed').html();
+                console.log(NewFeed);
+                done();
             });
 
             it('load at least 1 entry', function(){
@@ -118,9 +118,9 @@ $(function() {
 
          });
 
-    /* TODO: Write a new test suite named "New Feed Selection"
+    /* Last test suite named "New Feed Selection"
 
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* This test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
