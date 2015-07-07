@@ -68,7 +68,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-         /* TODO: Write a test that ensures the menu changes
+         /* a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
@@ -83,7 +83,7 @@ $(function() {
          });
 
          it('changes when clicked', function(){
-            menuIcon = $('menu-icon-link');
+            menuIcon = $('menu-hidden');
             menuIcon.click();
             expect(menuIcon).toBeTruthy(); 
             menuIcon.click();
