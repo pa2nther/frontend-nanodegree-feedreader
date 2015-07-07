@@ -103,18 +103,18 @@ $(function() {
 
     describe('Initial Entries', function(){
             
-            var NewFeed=0;
+            var NewFeed1=0;
             
             beforeEach(function(done){
                 loadFeed(0);
-                NewFeed = $('feed').html();
+                NewFeed1 = $('feed').html();
                 //done();
             });
             
-            console.log(NewFeed);
+            console.log(NewFeed1);
 
             it('load at least 1 entry', function(){
-                 expect(NewFeed).not.toBeNull();
+                 expect(NewFeed1).not.toBeNull();
             });
 
 
