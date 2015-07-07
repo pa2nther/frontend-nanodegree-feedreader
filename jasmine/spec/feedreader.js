@@ -139,14 +139,18 @@ $(function() {
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
                     
+                    loadFeed(n+1,done);
+                     NewFeed = $('.header-title').html();
+                     console.log(NewFeed+'log of the new Feed')
+                    
+                    
+                    
                 }); done();
                 
                 
                
-                loadFeed(n+1,done);
-                NewFeed = $('.header-title').html();
-                console.log(NewFeed+'log of the new Feed')
-                done();
+               
+            //    done();
            // });
                  
                 
