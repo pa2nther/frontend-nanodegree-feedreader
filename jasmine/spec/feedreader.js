@@ -35,6 +35,7 @@ $(function() {
             it('has url', function(){
                 var i=0;
                for( i; i<allFeeds.length;i++){
+                 console.log(allFeeds[i].url);  
                  expect(allFeeds[i].url).toBeDefined();
                  expect(allFeeds[i].url).not.toBeNull();
                 }
