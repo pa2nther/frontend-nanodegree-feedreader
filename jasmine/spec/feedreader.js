@@ -128,8 +128,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
          var n=0;
-         var NewFeed = null;
-         var oldContent = null;
+         var NewFeed ;
+         var oldContent ;
 
 
          describe('New Feed Selection', function(){
@@ -147,11 +147,11 @@ $(function() {
               done();
                 
             //});
+                
+            }); 
                  it('content changes for new feed', function(){
                   console.log(NewFeed,oldContent);
                   expect(NewFeed).not.toBe(oldContent);
-            }); 
-                
             });
 
            
