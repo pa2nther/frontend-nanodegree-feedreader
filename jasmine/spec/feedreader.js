@@ -106,9 +106,10 @@ $(function() {
             beforeEach(function(){
                 loadFeed(0);
                 NewFeed = $('feed').html();
-                console.log(NewFeed);
                 done();
             });
+            
+            console.log(NewFeed);
 
             it('load at least 1 entry', function(){
                  expect(NewFeed).not.toBeNull();
