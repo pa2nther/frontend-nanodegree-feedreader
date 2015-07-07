@@ -74,10 +74,10 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-   describe('The Menu', function(){
+   describe('The menu', function(){
 
          it('is hidden', function(){
-            menuIcon = $('menu-icon-link');
+            menuIcon = $('menu-hidden');
 
            expect(menuIcon).toBeTruthy();
          });
