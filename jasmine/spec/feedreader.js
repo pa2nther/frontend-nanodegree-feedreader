@@ -147,14 +147,14 @@ $(function() {
               done();
                 
             //});
-                 
+                 it('content changes for new feed', function(){
+                  console.log(NewFeed,oldContent);
+                  expect(NewFeed).not.toBe(oldContent);
+            }); 
                 
             });
 
-            it('content changes for new feed', function(){
-                console.log(NewFeed,oldContent);
-                expect(NewFeed).not.toBe(oldContent);
-            });
+           
             
          });
 });
