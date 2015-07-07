@@ -144,15 +144,15 @@ $(function() {
               loadFeed(n+1,done);
               NewFeed = $('.header-title').html();
               console.log(NewFeed+'log of the new Feed')   
-               
-               
-            //    done();
+              
+                done();
            // });
                  
                 
             });
 
             it('content changes for new feed', function(){
+                console.log(NewFeed,oldContent);
                 expect(NewFeed).not.toBe(oldContent);
             });
 
