@@ -9,8 +9,8 @@
 // The names and URLs to all of the feeds we'd like available.
 var allFeeds = [
     {
-     //   name: 'Udacity Blog',
-      //  url: 'http://blog.udacity.com/feeds/posts/default?alt=rss'
+        name: 'Udacity Blog',
+        url: 'http://blog.udacity.com/feeds/posts/default?alt=rss'
     }, {
         name: 'CSS Tricks',
         url: 'http://css-tricks.com/feed'
@@ -29,7 +29,7 @@ var allFeeds = [
  */
 function init() {
     // Load the first feed we've defined (index of 0).
-    loadFeed(0);
+    //loadFeed(0);
 }
 
 /* This function performs everything necessary to load a
