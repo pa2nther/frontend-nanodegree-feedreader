@@ -149,9 +149,10 @@ $(function() {
             //});
                 
             }); 
-                 it('content changes for new feed', function(){
+                 it('content changes for new feed', function(done){
                   console.log(NewFeed,oldContent);
                   expect(NewFeed).not.toBe(oldContent);
+                  done();
             });
 
            
