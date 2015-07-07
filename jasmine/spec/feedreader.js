@@ -104,9 +104,9 @@ $(function() {
          describe('Initial Entries', function(){
 
             beforeEach(function(done){
-                   
-                   NewFeed = $('feed').html();
                    loadFeed(0);
+                   NewFeed = $('feed').html();
+                   console.log(NewFeed);
                    done();
             });
 
