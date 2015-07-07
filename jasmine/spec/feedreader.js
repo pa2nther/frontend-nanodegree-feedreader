@@ -103,7 +103,7 @@ $(function() {
 
     describe('Initial Entries', function(){
             
-            var NewFeed;
+            var NewFeed=0;
             
             beforeEach(function(done){
                 loadFeed(0);
