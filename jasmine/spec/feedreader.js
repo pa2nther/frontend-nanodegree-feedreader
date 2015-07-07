@@ -94,7 +94,7 @@ $(function() {
 
     /* A new test suite named "Initial Entries" */
 
-        /* Aa test that ensures when the loadFeed
+        /* A test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test wil require
@@ -135,7 +135,7 @@ $(function() {
          describe('New Feed Selection', function(){
             
             beforeEach(function(done){
-                loadFeed(0,function(){
+                loadFeed(0,function(done){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
                     
@@ -146,7 +146,7 @@ $(function() {
               console.log(NewFeed+'log of the new Feed')   
               done();
                 
-            });
+            //});
                  
                 
             });
