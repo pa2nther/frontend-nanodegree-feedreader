@@ -138,8 +138,8 @@ $(function() {
             var n=0;
             var NewFeed ;
             var oldContent ;
-            beforeEach(function(done){
-                loadFeed(0,function(){
+            beforeEach(function(){
+                loadFeed(0,function(done){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
                     return oldContent;
@@ -149,9 +149,10 @@ $(function() {
               NewFeed = $('.header-title').html();
               console.log(NewFeed+'log of the new Feed')   
               //done();
-              });     
+              });    
+              done();
             });
-               done(); 
+               
             
                  it('content changes for new feed', function(done){
                     console.log(NewFeed,oldContent);
