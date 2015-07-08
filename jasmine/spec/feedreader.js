@@ -111,10 +111,11 @@ $(function() {
                 done();
             });
             
-            console.log(NewFeed1);
+            
             
             it('load at least 1 entry', function(done){
                 NewFeed1=$('feed').html();
+                console.log(NewFeed1);
                  expect(NewFeed1).not.toBeNull();
                  done();
             });
