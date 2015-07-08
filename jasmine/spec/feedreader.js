@@ -114,7 +114,7 @@ $(function() {
             console.log(NewFeed1);
             
             it('load at least 1 entry', function(){
-                NewFeed1=$.html();
+                NewFeed1=$('feed').html();
                  expect(NewFeed1).not.toBeNull();
             });
             
