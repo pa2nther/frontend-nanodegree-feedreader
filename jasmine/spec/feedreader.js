@@ -145,7 +145,7 @@ $(function() {
                     return oldContent;
             }); //done();
                 
-              loadFeed(n+1,function(done){
+              loadFeed(n+1,function(){
               NewFeed = $('.header-title').html();
               console.log(NewFeed+'log of the new Feed')   
               //done();
@@ -154,11 +154,11 @@ $(function() {
                done(); 
             
                  it('content changes for new feed', function(done){
-                  console.log(NewFeed,oldContent);
-                  expect(NewFeed).not.toBe(oldContent);
-                  done();
-            });
-
+                    console.log(NewFeed,oldContent);
+                    expect(NewFeed).not.toBe(oldContent);
+                  
+                });
+                done();
            
             
          });
