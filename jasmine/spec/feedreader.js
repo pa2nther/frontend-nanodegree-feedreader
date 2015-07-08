@@ -135,7 +135,7 @@ $(function() {
 
          describe('New Feed Selection', function(){
             
-            beforeEach(function(done){
+            beforeAll(function(done){
                 loadFeed(0,function(done){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
