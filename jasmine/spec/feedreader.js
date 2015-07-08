@@ -141,7 +141,7 @@ $(function() {
                 loadFeed(0,function(){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
-                    
+                    return oldContent;
             }); //done();
                 
               loadFeed(n+1,function(done){
@@ -153,7 +153,7 @@ $(function() {
                done(); 
             }); 
                  it('content changes for new feed', function(done){
-                  console.log(this.NewFeed,oldContent);
+                  console.log(NewFeed,oldContent);
                   expect(NewFeed).not.toBe(oldContent);
                   done();
             });
