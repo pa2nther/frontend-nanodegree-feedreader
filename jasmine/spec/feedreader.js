@@ -113,10 +113,10 @@ $(function() {
             
             console.log(NewFeed1);
 
-            it('load at least 1 entry', function(){
+            it('load at least 1 entry', function(done){
                  expect(NewFeed1).not.toBeNull();
             });
-
+            done();
 
 
          });
