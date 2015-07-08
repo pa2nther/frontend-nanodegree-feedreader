@@ -107,7 +107,7 @@ $(function() {
             
             beforeEach(function(done){
                 loadFeed(0);
-                NewFeed1 = $('.feed');
+                NewFeed1 = $('.feed').html;
                 console.log(NewFeed1);
                 done();
             });
