@@ -135,7 +135,7 @@ $(function() {
 
          describe('New Feed Selection', function(){
             
-            beforeAll(function(done){
+            beforeEach(function(done){
                 loadFeed(0,function(done){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
@@ -151,7 +151,7 @@ $(function() {
                 
             }); 
                  it('content changes for new feed', function(done){
-                  console.log(NewFeed,oldContent);
+                  console.log(this.NewFeed,this,oldContent);
                   expect(NewFeed).not.toBe(oldContent);
                   done();
             });
