@@ -143,16 +143,16 @@ $(function() {
                     
             }); //done();
                 
-              loadFeed(n+1,done);
+              loadFeed(n+1,function(done){
               NewFeed = $('.header-title').html();
               console.log(NewFeed+'log of the new Feed')   
-              done();
+              //done();
                 
-            //});
-                
+            });
+               done(); 
             }); 
                  it('content changes for new feed', function(done){
-                  console.log(this.NewFeed,this,oldContent);
+                  console.log(this.NewFeed,oldContent);
                   expect(NewFeed).not.toBe(oldContent);
                   done();
             });
