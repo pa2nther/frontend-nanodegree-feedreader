@@ -107,13 +107,14 @@ $(function() {
             
             beforeEach(function(done){
                 loadFeed(0);
-                NewFeed1 = $('feed').html();
-                //done();
+               // NewFeed1 = $('feed').html();
+                done();
             });
             
             console.log(NewFeed1);
-            done();
+            
             it('load at least 1 entry', function(){
+                NewFeed1=$.html();
                  expect(NewFeed1).not.toBeNull();
             });
             
