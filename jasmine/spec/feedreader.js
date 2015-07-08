@@ -108,15 +108,15 @@ $(function() {
             beforeEach(function(done){
                 loadFeed(0);
                 NewFeed1 = $('feed').html();
-                done();
+                //done();
             });
             
             console.log(NewFeed1);
-
-            it('load at least 1 entry', function(done){
+            done();
+            it('load at least 1 entry', function(){
                  expect(NewFeed1).not.toBeNull();
             });
-            done();
+            
 
 
          });
