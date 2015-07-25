@@ -33,12 +33,12 @@ $(function() {
          */
            
             it('has url', function(){
-                var i=0;
-                for( i; i<allFeeds.length;i++){
+                
+                for(var i=0; i<allFeeds.length;i++){
                     console.log(allFeeds[i].url);  
                     expect(allFeeds[i].url).toBeDefined();
                     expect(allFeeds[i].url).not.toBeNull();
-                    expect(allFeeds[i].url).not.toBe(' ');
+                    expect(allFeeds[i].url.length).not.toBe(0);
                 }
             });
 
@@ -53,7 +53,7 @@ $(function() {
                 for(j;j<allFeeds.length;j++){
                     expect(allFeeds[j].name).toBeDefined();
                     expect(allFeeds[j].name).not.toBeNull();
-                    expect(allFeeds[j].name).not.toBe(' ');
+                    expect(allFeeds[j].name.length).not.toBe(0);
                }
              });
 
@@ -76,21 +76,20 @@ $(function() {
 
    describe('The menu', function(){
 
-         it('is hidden', function(){
-            menuIcon = $('menu-hidden');
+         var menuI = $('body').hasClass("menu-hidden");
 
-            expect(menuIcon).toBeTruthy();
+         it('is hidden', function(){
+            expect(menuI).toBeTruthy();
          });
 
          it('changes when clicked', function(){
-            menuIcon = $('menu-hidden');
-            menuIcon.click();
-            expect(menuIcon).toBeTruthy(); 
-            menuIcon.click();
-            expect('menu').toBeTruthy();
+            $('.menu-icon-link').click();
+            expect($('body').hasClass("menu-hidden")).toBeFalsy(); 
+            $('.menu-icon-link').click();
+            expect($('body').hasClass("menu-hidden")).toBeTruthy();
          });
 
-   });      
+   });
 
     /* A new test suite named "Initial Entries" */
 
@@ -103,21 +102,22 @@ $(function() {
 
     describe('Initial Entries', function(){
             
-            var NewFeed1=0;
+            var newFeed1;
             
             beforeEach(function(done){
-                loadFeed(0);
-                NewFeed1 = $('.feed').html;
-                console.log(NewFeed1);
+                loadFeed(0,function(){;
+                newFeed1 = $('.feed').html();
+                console.log(newFeed1);
                 done();
+            });
             });
             
             
             
             it('load at least 1 entry', function(done){
                 //NewFeed1=$('feed').html();
-                console.log(NewFeed1);
-                 expect(NewFeed1).not.toBeNull();
+                console.log(newFeed1);
+                 expect(newFeed1.length).not.toBe(0);
                  done();
             });
             
@@ -136,7 +136,7 @@ $(function() {
 
          describe('New Feed Selection', function(){
             var n=0;
-            var NewFeed ;
+            var newFeed ;
             var oldContent ;
             beforeEach(function(done){
                 loadFeed(0,function(){
@@ -146,8 +146,8 @@ $(function() {
             }); //done();
                 
               loadFeed(n+1,function(){
-              NewFeed = $('.header-title').html();
-              console.log(NewFeed+'log of the new Feed')   
+              newFeed = $('.header-title').html();
+              console.log(newFeed+'log of the new Feed');   
               done();
               });    
               
@@ -155,8 +155,8 @@ $(function() {
                
             
                  it('content changes for new feed', function(done){
-                    console.log(NewFeed,oldContent);
-                    expect(NewFeed).not.toBe(oldContent);
+                    console.log(newFeed,oldContent);
+                    expect(newFeed).not.toBe(oldContent);
                   done();
                 });
                 
