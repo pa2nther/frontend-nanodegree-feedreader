@@ -31,11 +31,11 @@ $(function() {
          *  and ensures it has a URL defined
          * and that the URL is not empty.
          */
-           
+
             it('has url', function(){
-                
+
                 for(var i=0; i<allFeeds.length;i++){
-                    console.log(allFeeds[i].url);  
+                    console.log(allFeeds[i].url);
                     expect(allFeeds[i].url).toBeDefined();
                     expect(allFeeds[i].url).not.toBeNull();
                     expect(allFeeds[i].url.length).not.toBe(0);
@@ -47,7 +47,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-           
+
              it('has name', function(){
                 var j=0;
                 for(j;j<allFeeds.length;j++){
@@ -84,7 +84,7 @@ $(function() {
 
          it('changes when clicked', function(){
             $('.menu-icon-link').click();
-            expect($('body').hasClass("menu-hidden")).toBeFalsy(); 
+            expect($('body').hasClass("menu-hidden")).toBeFalsy();
             $('.menu-icon-link').click();
             expect($('body').hasClass("menu-hidden")).toBeTruthy();
          });
@@ -101,27 +101,24 @@ $(function() {
          */
 
     describe('Initial Entries', function(){
-            
+
             var newFeed1;
-            
+            var entries;
+
             beforeEach(function(done){
-                loadFeed(0,function(){;
-                newFeed1 = $('.feed').html();
-                console.log(newFeed1);
-                done();
+                loadFeed(0,function(){
+                    newFeed1 = $('.feed').children();
+                    var feedUrl = allFeeds[0].url;
+                    done();
             });
             });
-            
-            
-            
+
             it('load at least 1 entry', function(done){
                 //NewFeed1=$('feed').html();
                 console.log(newFeed1);
                  expect(newFeed1.length).not.toBe(0);
                  done();
             });
-            
-
 
          });
 
@@ -131,7 +128,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        
+
 
 
          describe('New Feed Selection', function(){
@@ -142,25 +139,21 @@ $(function() {
                 loadFeed(0,function(){
                     oldContent= $('.header-title').html();
                     console.log(oldContent);
-                    return oldContent;
-            }); //done();
-                
-              loadFeed(n+1,function(){
-              newFeed = $('.header-title').html();
-              console.log(newFeed+'log of the new Feed');   
-              done();
-              });    
-              
+
+            //}); //done();
+                    loadFeed(n+1,function(){
+                    newFeed = $('.header-title').html();
+                    //console.log(newFeed+'log of the new Feed');
+                    done();
+                    });
+                });
             });
-               
-            
+
+
                  it('content changes for new feed', function(done){
                     console.log(newFeed,oldContent);
                     expect(newFeed).not.toBe(oldContent);
                   done();
                 });
-                
-           
-            
          });
 });
