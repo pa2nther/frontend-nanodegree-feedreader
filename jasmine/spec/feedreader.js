@@ -32,15 +32,15 @@ $(function() {
          * and that the URL is not empty.
          */
 
-            it('has url', function(){
+        it('has url', function(){
 
-                for(var i=0; i<allFeeds.length;i++){
-                    console.log(allFeeds[i].url);
-                    expect(allFeeds[i].url).toBeDefined();
-                    expect(allFeeds[i].url).not.toBeNull();
-                    expect(allFeeds[i].url.length).not.toBe(0);
-                }
-            });
+            for(var i = 0; i < allFeeds.length;i++){
+                console.log(allFeeds[i].url);
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url).not.toBeNull();
+                expect(allFeeds[i].url.length).not.toBe(0);
+            }
+        });
 
         /* A test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -48,14 +48,13 @@ $(function() {
          */
 
 
-             it('has name', function(){
-                var j=0;
-                for(j;j<allFeeds.length;j++){
-                    expect(allFeeds[j].name).toBeDefined();
-                    expect(allFeeds[j].name).not.toBeNull();
-                    expect(allFeeds[j].name.length).not.toBe(0);
-               }
-             });
+        it('has name', function(){
+            for(var j = 0;j < allFeeds.length;j++){
+                expect(allFeeds[j].name).toBeDefined();
+                expect(allFeeds[j].name).not.toBeNull();
+                expect(allFeeds[j].name.length).not.toBe(0);
+            }
+        });
 
     });
 
@@ -74,26 +73,26 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-   describe('The menu', function(){
+    describe('The menu', function(){
 
-         var menuI = $('body').hasClass("menu-hidden");
+        var menuI = $('body').hasClass("menu-hidden");
 
-         it('is hidden', function(){
+        it('is hidden', function(){
             expect(menuI).toBeTruthy();
-         });
+        });
 
-         it('changes when clicked', function(){
+        it('changes when clicked', function(){
             $('.menu-icon-link').click();
             expect($('body').hasClass("menu-hidden")).toBeFalsy();
             $('.menu-icon-link').click();
             expect($('body').hasClass("menu-hidden")).toBeTruthy();
-         });
+        });
 
-   });
+    });
 
     /* A new test suite named "Initial Entries" */
 
-        /* A test that ensures when the loadFeed
+         /* A test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test wil require
@@ -102,25 +101,23 @@ $(function() {
 
     describe('Initial Entries', function(){
 
-            var newFeed1;
-            var entries;
+        var newFeed1;
 
-            beforeEach(function(done){
-                loadFeed(0,function(){
-                    newFeed1 = $('.feed').children();
-                    var feedUrl = allFeeds[0].url;
-                    done();
+        beforeEach(function(done){
+            loadFeed(0,function(){
+                newFeed1 = $('.feed').children();
+                done();
             });
-            });
+        });
 
-            it('load at least 1 entry', function(done){
-                //NewFeed1=$('feed').html();
-                console.log(newFeed1);
-                 expect(newFeed1.length).not.toBe(0);
-                 done();
-            });
+        it('load at least 1 entry', function(done){
+            //NewFeed1=$('feed').html();
+            console.log(newFeed1);
+            expect(newFeed1.length).not.toBe(0);
+            done();
+        });
 
-         });
+    });
 
     /* Last test suite named "New Feed Selection"
 
@@ -131,29 +128,27 @@ $(function() {
 
 
 
-         describe('New Feed Selection', function(){
-            var n=0;
-            var newFeed ;
-            var oldContent ;
-            beforeEach(function(done){
-                loadFeed(0,function(){
-                    oldContent= $('.header-title').html();
-                    console.log(oldContent);
-
-            //}); //done();
-                    loadFeed(n+1,function(){
+    describe('New Feed Selection', function(){
+        var n=0;
+        var newFeed ;
+        var oldContent ;
+        beforeEach(function(done){
+            loadFeed(n,function(){
+                oldContent= $('.header-title').html();
+                console.log(oldContent);
+                loadFeed(n+1,function(){
                     newFeed = $('.header-title').html();
                     //console.log(newFeed+'log of the new Feed');
                     done();
-                    });
                 });
             });
+        });
 
 
-                 it('content changes for new feed', function(done){
-                    console.log(newFeed,oldContent);
-                    expect(newFeed).not.toBe(oldContent);
-                  done();
-                });
-         });
+        it('content changes for new feed', function(done){
+            console.log(newFeed,oldContent);
+            expect(newFeed).not.toBe(oldContent);
+            done();
+        });
+    });
 });
